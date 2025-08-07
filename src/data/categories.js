@@ -1,6 +1,28 @@
+import { 
+  FaCar, 
+  FaBuilding, 
+  FaMobileAlt, 
+  FaBriefcase, 
+  FaMotorcycle, 
+  FaTv, 
+  FaTruck, 
+  FaCouch, 
+  FaTshirt, 
+  FaBaseballBall, 
+  FaDog, 
+  FaTools 
+} from 'react-icons/fa';
+
 export const categoryData = {
+  Cars: {
+    icon: FaCar,
+    subcategories: [
+      "Used Cars",
+      "Cars Accessories"
+    ]
+  },
   Properties: {
-    icon: "🏠",
+    icon: FaBuilding,
     subcategories: [
       "For Sale: Houses & Apartments",
       "For Rent: Houses & Apartments", 
@@ -9,15 +31,8 @@ export const categoryData = {
       "Commercial Property"
     ]
   },
-  Cars: {
-    icon: "🚗",
-    subcategories: [
-      "Used Cars",
-      "Cars Accessories"
-    ]
-  },
   Mobiles: {
-    icon: "📱",
+    icon: FaMobileAlt,
     subcategories: [
       "Smartphones",
       "Mobile Accessories",
@@ -25,7 +40,7 @@ export const categoryData = {
     ]
   },
   Jobs: {
-    icon: "💼",
+    icon: FaBriefcase,
     subcategories: [
       "Full Time Jobs",
       "Part Time Jobs",
@@ -34,7 +49,7 @@ export const categoryData = {
     ]
   },
   Bikes: {
-    icon: "🏍️",
+    icon: FaMotorcycle,
     subcategories: [
       "Motorcycles",
       "Scooters",
@@ -43,7 +58,7 @@ export const categoryData = {
     ]
   },
   "Electronics & Appliances": {
-    icon: "📺",
+    icon: FaTv,
     subcategories: [
       "TVs, Video - Audio",
       "Kitchen & Other Appliances",
@@ -52,8 +67,26 @@ export const categoryData = {
       "Games & Entertainment"
     ]
   },
+  "Commercial Vehicles & Spares": {
+    icon: FaTruck,
+    subcategories: [
+      "Commercial Vehicles",
+      "Spare Parts",
+      "Heavy Machinery"
+    ]
+  },
+  "Furniture": {
+    icon: FaCouch,
+    subcategories: [
+      "Sofa & Dining",
+      "Beds & Wardrobes",
+      "Home Decor & Garden",
+      "Kids Furniture",
+      "Office Furniture"
+    ]
+  },
   "Fashion": {
-    icon: "👕",
+    icon: FaTshirt,
     subcategories: [
       "Men",
       "Women", 
@@ -61,7 +94,7 @@ export const categoryData = {
     ]
   },
   "Books, Sports & Hobbies": {
-    icon: "📚",
+    icon: FaBaseballBall,
     subcategories: [
       "Books",
       "Sports Equipment",
@@ -70,7 +103,7 @@ export const categoryData = {
     ]
   },
   "Pets": {
-    icon: "🐕",
+    icon: FaDog,
     subcategories: [
       "Dogs",
       "Cats", 
@@ -79,7 +112,7 @@ export const categoryData = {
     ]
   },
   "Services": {
-    icon: "🛠️",
+    icon: FaTools,
     subcategories: [
       "Education & Classes",
       "Tours & Travel",

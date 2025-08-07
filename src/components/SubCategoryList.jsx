@@ -14,7 +14,6 @@ const SubCategoryList = ({ subcategories, selectedCategory, selectedSubcategory,
     return (
       <div className="flex items-center justify-center h-64 text-gray-500">
         <div className="text-center">
-          <div className="text-4xl mb-4">👈</div>
           <p className="text-lg">Select a category to see subcategories</p>
         </div>
       </div>
