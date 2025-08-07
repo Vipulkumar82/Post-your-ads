@@ -48,23 +48,26 @@ const PostFormPage = () => {
         showBackButton={true} 
         onBack={handleChangeCategory}
       />
-
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+      <div className='flex w-full justify-center bg-white p-4'>
+        <h1 className="text-2xl sm:text-3xl md:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
             POST YOUR AD
-          </h1>
+        </h1>
+      </div>
+      <div className="max-w-4xl mx-auto border">
+        <div >
           
-          <div className="flex items-center space-x-2 text-sm bg-white rounded-lg p-4 shadow-sm border border-gray-200">
-            <span className="text-gray-600">{parentCategory}</span>
-            <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-            <span className="font-medium text-gray-900">{decodedSubcategory}</span>
+          <div className="flex items-center text-sm bg-white border p-4">
+            <div className="text-lg font-semibold text-gray-900 uppercase">Selected Category</div>
+          </div>
+          
+          <div className="flex items-center space-x-2 text-sm bg-white border-t-0 border border-gray-300 p-4">
+            <span className="text-gray-600 text-sm">{parentCategory}</span>
+            <span className="text-gray-400">/</span>
+            <span className="font-medium text-gray-400 text-sm">{decodedSubcategory}</span>
             <div className="ml-auto">
               <button
                 onClick={handleChangeCategory}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md font-medium text-sm transition-colors duration-200 shadow-sm hover:shadow-md"
+                className="text-blue-600 font-bold underline hover:text-blue-700"
               >
                 Change
               </button>
@@ -75,9 +78,9 @@ const PostFormPage = () => {
         <PostForm subcategory={decodedSubcategory} />
       </div>
 
-      <footer className="bg-white border-t border-gray-200 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="text-center text-gray-500 text-sm">
+      <footer className="bg-white border-t border-gray-200 mt-8 sm:mt-16">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-6 sm:py-8">
+          <div className="text-center text-gray-500 text-xs sm:text-sm">
             <p>&copy; 2025 LazyCrazy. This is a demo application.</p>
           </div>
         </div>

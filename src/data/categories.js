@@ -97,7 +97,7 @@ export const formFieldsConfig = {
         name: "propertyType",
         type: "selection",
         required: true,
-        options: ["Flats/Apartments", "Independent Builder Floors", "Farm House", "House & Villa", "1 RK/ Studio Apartment"]
+        options: ["Flats/Apartments", "Independent Builder Floors", "Farm House", "House & Villa"]
       },
       {
         label: "BHK",
@@ -118,10 +118,16 @@ export const formFieldsConfig = {
         options: ["Furnished", "Semi-Furnished", "Unfurnished"]
       },
       {
+        label: "Project Status",
+        name: "listedBy",
+        type: "selection",
+        options: ["New Launched", "Under Construction", "Ready to Move"]
+      },
+      {
         label: "Listed by",
         name: "listedBy",
         type: "selection",
-        options: ["Owner", "Dealer", "Builder"]
+        options: ["Builder", "Owner", "Dealer"]
       },
       {
         label: "Super Buildup area (ft²)",
@@ -162,13 +168,46 @@ export const formFieldsConfig = {
         label: "Car Parking",
         name: "parking",
         type: "selection",
-        options: ["Yes", "No"]
+        options: ["0", "1", "2", "3", "4+"]
       },
       {
         label: "Facing",
         name: "facing",
         type: "selection",
         options: ["East", "West", "North", "South", "North-East", "North-West", "South-East", "South-West"]
+      },
+      {
+        label: "Project Name",
+        name: "projectName",
+        type: "input",
+        inputType: "text",
+        placeholder: "Enter project name",
+        maxLength: 70
+      },
+      {
+        label: "Ad title",
+        name: "title",
+        type: "input",
+        inputType: "text",
+        placeholder: "Mention the key features of your item (e.g. brand, model, age, type)",
+        required: true,
+        maxLength: 70
+      },
+      {
+        label: "Description",
+        name: "description",
+        type: "textarea",
+        placeholder: "Include condition, features and reason for selling",
+        required: true,
+        maxLength: 4096
+      },
+      {
+        label: "Set a price",
+        name: "price",
+        type: "input",
+        inputType: "number",
+        placeholder: "Enter price",
+        required: true
       }
     ]
   },
@@ -231,6 +270,31 @@ export const formFieldsConfig = {
         inputType: "number",
         placeholder: "Monthly rent amount",
         required: true
+      },
+      {
+        label: "Ad title",
+        name: "title",
+        type: "input",
+        inputType: "text",
+        placeholder: "Mention the key features of your item (e.g. brand, model, age, type)",
+        required: true,
+        maxLength: 70
+      },
+      {
+        label: "Description",
+        name: "description",
+        type: "textarea",
+        placeholder: "Include condition, features and reason for selling",
+        required: true,
+        maxLength: 4096
+      },
+      {
+        label: "Set a price",
+        name: "price",
+        type: "input",
+        inputType: "number",
+        placeholder: "Enter price",
+        required: true
       }
     ]
   },
@@ -274,6 +338,31 @@ export const formFieldsConfig = {
         type: "input",
         inputType: "number",
         placeholder: "Manufacturing year"
+      },
+      {
+        label: "Ad title",
+        name: "title",
+        type: "input",
+        inputType: "text",
+        placeholder: "Mention the key features of your item (e.g. brand, model, age, type)",
+        required: true,
+        maxLength: 70
+      },
+      {
+        label: "Description",
+        name: "description",
+        type: "textarea",
+        placeholder: "Include condition, features and reason for selling",
+        required: true,
+        maxLength: 4096
+      },
+      {
+        label: "Set a price",
+        name: "price",
+        type: "input",
+        inputType: "number",
+        placeholder: "Enter price",
+        required: true
       }
     ]
   },
@@ -303,37 +392,37 @@ export const formFieldsConfig = {
         name: "ram",
         type: "selection",
         options: ["2 GB", "3 GB", "4 GB", "6 GB", "8 GB", "12 GB", "16 GB"]
+      },
+      {
+        label: "Ad title",
+        name: "title",
+        type: "input",
+        inputType: "text",
+        placeholder: "Mention the key features of your item (e.g. brand, model, age, type)",
+        required: true,
+        maxLength: 70
+      },
+      {
+        label: "Description",
+        name: "description",
+        type: "textarea",
+        placeholder: "Include condition, features and reason for selling",
+        required: true,
+        maxLength: 4096
+      },
+      {
+        label: "Set a price",
+        name: "price",
+        type: "input",
+        inputType: "number",
+        placeholder: "Enter price",
+        required: true
       }
     ]
   }
 };
 
 export const commonFields = [
-  {
-    label: "Ad title",
-    name: "title",
-    type: "input",
-    inputType: "text",
-    placeholder: "Mention the key features of your item (e.g. brand, model, age, type)",
-    required: true,
-    maxLength: 70
-  },
-  {
-    label: "Description",
-    name: "description",
-    type: "textarea",
-    placeholder: "Include condition, features and reason for selling",
-    required: true,
-    maxLength: 4096
-  },
-  {
-    label: "Set a price",
-    name: "price",
-    type: "input",
-    inputType: "number",
-    placeholder: "Enter price",
-    required: true
-  },
   {
     label: "Your name",
     name: "name",

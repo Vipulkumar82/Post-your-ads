@@ -22,34 +22,36 @@ const SubCategoryList = ({ subcategories, selectedCategory, selectedSubcategory,
   }
 
   return (
-    <div className="space-y-2">
-      <h3 className="text-lg font-semibold text-gray-800 mb-4">
+    <div>
+      <h3 className="text-lg font-semibold text-gray-900 mb-4">
         Choose a subcategory in {selectedCategory}
       </h3>
-      {subcategories?.map((subcategory) => (
-        <div
-          key={subcategory}
-          className={`category-card flex items-center justify-between ${
-            selectedSubcategory === subcategory ? 'active' : ''
-          }`}
-          onClick={() => handleSubcategoryClick(subcategory)}
-        >
-          <span className="font-medium text-gray-700">{subcategory}</span>
-          <svg 
-            className="w-5 h-5 text-gray-400" 
-            fill="none" 
-            stroke="currentColor" 
-            viewBox="0 0 24 24"
+      <div className="space-y-0">
+        {subcategories?.map((subcategory) => (
+          <div
+            key={subcategory}
+            className={`flex items-center justify-between py-3 px-4 cursor-pointer hover:bg-gray-50 ${
+              selectedSubcategory === subcategory ? 'bg-white border-l-4 border-l-blue-500' : 'text-gray-600'
+            }`}
+            onClick={() => handleSubcategoryClick(subcategory)}
           >
-            <path 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
-              strokeWidth={2} 
-              d="M9 5l7 7-7 7" 
-            />
-          </svg>
-        </div>
-      ))}
+            <span className="text-gray-900">{subcategory}</span>
+            <svg 
+              className="w-4 h-4 text-gray-400" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                strokeWidth={2} 
+                d="M9 5l7 7-7 7" 
+              />
+            </svg>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
