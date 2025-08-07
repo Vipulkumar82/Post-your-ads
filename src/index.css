@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+  
+  body {
+    @apply font-sans bg-gray-50 text-gray-900 antialiased;
+    margin: 0;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-lazycrazy-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-opacity-90 transition-all duration-200;
+  }
+  
+  .btn-secondary {
+    @apply bg-white text-lazycrazy-primary border border-lazycrazy-primary px-6 py-2 rounded-lg font-medium hover:bg-lazycrazy-primary hover:text-white transition-all duration-200;
+  }
+  
+  .category-card {
+    @apply bg-white rounded-lg shadow-sm border border-gray-200 p-4 cursor-pointer hover:shadow-md transition-all duration-200;
+  }
+  
+  .category-card.active {
+    @apply border-lazycrazy-primary bg-lazycrazy-primary bg-opacity-5;
+  }
+  
+  .form-field {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lazycrazy-primary focus:border-lazycrazy-primary outline-none transition-all duration-200;
+  }
+  
+  .selection-button {
+    @apply px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:border-lazycrazy-primary hover:text-lazycrazy-primary transition-all duration-200 cursor-pointer;
+  }
+  
+  .selection-button.active {
+    @apply bg-lazycrazy-primary text-white border-lazycrazy-primary;
+  }
+
+  .image-dragging {
+    @apply opacity-50 scale-95 transform transition-all duration-200;
+  }
+
+  .image-drag-over {
+    @apply ring-2 ring-lazycrazy-primary ring-offset-2 transition-all duration-200;
+  }
+
+  .drag-handle {
+    @apply cursor-move;
+  }
+
+  .photo-grid-item {
+    @apply transition-all duration-200 ease-in-out;
+  }
+
+  .photo-grid-item:hover {
+    @apply scale-105 z-10;
+  }
+}
