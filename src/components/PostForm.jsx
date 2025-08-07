@@ -477,7 +477,7 @@ const PostForm = ({ subcategory }) => {
                     <img
                       src={URL.createObjectURL(image)}
                       alt={`Upload ${index + 1}`}
-                      className="w-full h-full object-cover rounded border border-gray-300"
+                      className="w-full h-full object-cover border border-black"
                       draggable={false}
                     />
 
@@ -568,7 +568,7 @@ const PostForm = ({ subcategory }) => {
       </div>
 
       <div className="bg-white rounded-lg p-4 sm:p-6 shadow-sm border border-gray-200">
-        <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-3 sm:mb-4">
+        <h3 className="text-base sm:text-lg font-bold text-gray-800 mb-3 sm:mb-4">
           Confirm Your Location
         </h3>
 
