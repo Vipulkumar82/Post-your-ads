@@ -414,7 +414,7 @@ const PostForm = ({ subcategory }) => {
           This field is mandatory
         </p>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-3 md:gap-2 max-w-none sm:max-w-lg md:max-w-md">
+        <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 gap-1.5 sm:gap-2 md:gap-2 max-w-none sm:max-w-lg md:max-w-md">
           {Array.from({ length: 20 }).map(
             (_, index) => {
               if (index < images.length) {
@@ -510,7 +510,7 @@ const PostForm = ({ subcategory }) => {
                       className="hidden"
                     />
                     <svg
-                      className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 mb-1"
+                      className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-gray-400 mb-0.5 sm:mb-1"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -523,7 +523,7 @@ const PostForm = ({ subcategory }) => {
                       />
                     </svg>
                     {index === images.length && (
-                      <span className="text-xs text-gray-600 font-medium text-center leading-none px-1">
+                      <span className="text-xs text-gray-600 font-medium text-center leading-none px-0.5 sm:px-1 hidden sm:block">
                         Add Photo
                       </span>
                     )}
