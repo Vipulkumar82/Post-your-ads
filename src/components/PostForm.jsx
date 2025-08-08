@@ -239,7 +239,6 @@ const PostForm = ({ subcategory }) => {
 
     switch (field.type) {
       case "selection":
-        // Special handling for facing field - render as dropdown
         if (field.name === "facing") {
           return (
             <div key={field.name} className="space-y-2">
@@ -283,7 +282,6 @@ const PostForm = ({ subcategory }) => {
           );
         }
         
-        // Default selection rendering for other fields
         return (
           <div key={field.name} className="space-y-2">
             <label className="block text-sm font-medium text-gray-900">
@@ -339,7 +337,6 @@ const PostForm = ({ subcategory }) => {
         );
 
       default:
-        // Special handling for price field - create separate section
         if (field.name === "price") {
           return (
             <div key={field.name} className="bg-white rounded-lg p-4 sm:p-6 shadow-sm border border-gray-200 mt-4">

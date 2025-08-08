@@ -13,7 +13,6 @@ const AdsPostPage = () => {
       console.log('First ad images:', savedAds[0].images);
     }
     
-    // Add a sample ad if no ads exist (for testing)
     if (savedAds.length === 0) {
       const sampleAd = {
         id: 'sample-123',

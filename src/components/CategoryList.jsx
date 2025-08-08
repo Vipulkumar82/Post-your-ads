@@ -16,11 +16,8 @@ const CategoryList = ({ categories, selectedCategory, onCategorySelect, onSubcat
 
   const handleSubcategoryClick = (categoryName, subcategory) => {
     onSubcategorySelect(subcategory);
-    
-    // Navigate to form page when subcategory is selected
-    // On mobile, navigate immediately. On desktop, let the right panel handle it
+
     if (isMobile) {
-      // Encode the subcategory for URL safety
       const encodedSubcategory = encodeURIComponent(subcategory);
       navigate(`/post-form/${encodedSubcategory}`);
     }
@@ -65,7 +62,6 @@ const CategoryList = ({ categories, selectedCategory, onCategorySelect, onSubcat
               </svg>
             </div>
             
-            {/* Subcategories - Only show on mobile/tablet, hidden on large screens */}
             <div className={`overflow-hidden transition-all duration-500 ease-in-out lg:hidden ${
               expandedCategory === categoryName ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
             }`}>

@@ -32,7 +32,7 @@ const HomePage = () => {
         </div>
 
         <div className="bg-white border border-gray-300 overflow-hidden">
-          {/* Mobile/Small Screen: Single Column with Accordion Only */}
+          
           <div className="block lg:hidden">
             <div className="p-6">
               <CategoryList
@@ -45,7 +45,6 @@ const HomePage = () => {
             </div>
           </div>
 
-          {/* Large Screen: Two Column Layout */}
           <div className="hidden lg:grid lg:grid-cols-2 min-h-96">
             <div className="p-6 border-r border-gray-300">
               <CategoryList
