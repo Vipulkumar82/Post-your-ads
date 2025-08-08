@@ -247,7 +247,7 @@ const PostForm = ({ subcategory }) => {
                 {field.label}{" "}
                 {field.required && <span className="text-red-500">*</span>}
               </label>
-              <div className="relative max-w-md">
+              <div className="relative max-w-none sm:max-w-md">
                 <select
                   value={formData[field.name] || ""}
                   onChange={(e) => handleInputChange(field.name, e.target.value)}
@@ -321,12 +321,12 @@ const PostForm = ({ subcategory }) => {
             </label>
             <textarea
               {...commonProps}
-              className="w-full max-w-md px-3 py-2 border border-gray-300 rounded-sm focus:border-blue-500 focus:outline-none min-h-24 resize-y"
+              className="w-full max-w-none sm:max-w-md px-3 py-2 border border-gray-300 rounded-sm focus:border-blue-500 focus:outline-none min-h-24 resize-y"
               placeholder={field.placeholder}
               maxLength={field.maxLength}
             />
             {field.maxLength && (
-              <div className="text-right max-w-md">
+              <div className="text-right max-w-none sm:max-w-md">
                 <p className="text-xs text-gray-500">
                   {(formData[field.name] || "").length} / {field.maxLength}
                 </p>
@@ -350,7 +350,7 @@ const PostForm = ({ subcategory }) => {
                 <label className="block text-sm font-medium text-gray-700">
                   Price <span className="text-red-500">*</span>
                 </label>
-                <div className="relative max-w-md">
+                <div className="relative max-w-none sm:max-w-md">
                   <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500">₹</span>
                   <input
                     {...commonProps}
@@ -376,12 +376,12 @@ const PostForm = ({ subcategory }) => {
             <input
               {...commonProps}
               type={field.inputType || "text"}
-              className="w-full max-w-md px-3 border border-gray-300 rounded-sm focus:border-blue-500 focus:outline-none"
+              className="w-full max-w-none sm:max-w-md px-3 py-2 border border-gray-300 rounded-sm focus:border-blue-500 focus:outline-none"
               placeholder={field.placeholder}
               maxLength={field.maxLength}
             />
             {field.maxLength && (
-              <div className="text-right max-w-md">
+              <div className="text-right max-w-none sm:max-w-md">
                 <p className="text-xs text-gray-500">
                   {(formData[field.name] || "").length} / {field.maxLength}
                 </p>
@@ -398,23 +398,23 @@ const PostForm = ({ subcategory }) => {
   return (
     <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
       {specificFields.length > 0 && (
-        <div className="bg-white border border-gray-300 p-6">
-          <h3 className="text-lg font-semibold text-gray-900 mb-6 uppercase">
+        <div className="bg-white border border-gray-300 p-3 sm:p-4 md:p-6">
+          <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-900 mb-4 sm:mb-6 uppercase">
             Include Some Details
           </h3>
-          <div className="grid grid-cols-1 gap-6">
+          <div className="grid grid-cols-1 gap-4 sm:gap-6">
             {specificFields.map(renderField)}
           </div>
         </div>
       )}
 
-      <div className="bg-white rounded-lg p-4 sm:p-6 shadow-sm border border-gray-200">
-        <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-3 sm:mb-4 uppercase">Upload Up To 20 Photos</h3>
-        <p className="text-sm text-red-500 mb-3 sm:mb-4">
+      <div className="bg-white rounded-lg p-3 sm:p-4 md:p-6 shadow-sm border border-gray-200">
+        <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-800 mb-3 sm:mb-4 uppercase">Upload Up To 20 Photos</h3>
+        <p className="text-xs sm:text-sm text-red-500 mb-3 sm:mb-4">
           This field is mandatory
         </p>
 
-        <div className="grid grid-cols-4 gap-x-2 gap-y-1 max-w-md">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-3 md:gap-2 max-w-none sm:max-w-lg md:max-w-md">
           {Array.from({ length: 20 }).map(
             (_, index) => {
               if (index < images.length) {
@@ -422,7 +422,7 @@ const PostForm = ({ subcategory }) => {
                 return (
                   <div
                     key={`image-${index}`}
-                    className={`relative w-24 h-24 group cursor-move ${
+                    className={`relative w-full aspect-square group cursor-move ${
                       draggedIndex === index ? "opacity-50 scale-95" : ""
                     } ${
                       dragOverIndex === index
@@ -499,9 +499,9 @@ const PostForm = ({ subcategory }) => {
               return (
                 <div
                   key={`placeholder-${index}`}
-                  className="relative w-24 h-24"
+                  className="relative w-full aspect-square"
                 >
-                  <label className="border-2 border-gray-300 rounded cursor-pointer hover:border-lazycrazy-primary transition-colors flex flex-col items-center justify-center w-24 h-24 bg-white">
+                  <label className="border-2 border-gray-300 rounded cursor-pointer hover:border-lazycrazy-primary transition-colors flex flex-col items-center justify-center w-full h-full bg-white">
                     <input
                       type="file"
                       multiple
@@ -510,7 +510,7 @@ const PostForm = ({ subcategory }) => {
                       className="hidden"
                     />
                     <svg
-                      className="w-5 h-5 text-gray-400 mb-1"
+                      className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 mb-1"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -523,7 +523,7 @@ const PostForm = ({ subcategory }) => {
                       />
                     </svg>
                     {index === images.length && (
-                      <span className="text-xs text-gray-600 font-medium text-center leading-none">
+                      <span className="text-xs text-gray-600 font-medium text-center leading-none px-1">
                         Add Photo
                       </span>
                     )}

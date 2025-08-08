@@ -32,23 +32,51 @@ const HomePage = () => {
         </div>
 
         <div className="bg-white border border-gray-300 overflow-hidden">
-          <div className="grid grid-cols-1 lg:grid-cols-2 min-h-96">
-            <div className="p-6 border-b lg:border-b-0 lg:border-r border-gray-300">
+          {/* Mobile/Small Screen: Single Column with Accordion Only */}
+          <div className="block lg:hidden">
+            <div className="p-6">
               <CategoryList
                 categories={categoryData}
                 selectedCategory={selectedCategory}
                 onCategorySelect={handleCategorySelect}
+                onSubcategorySelect={handleSubcategorySelect}
+                isMobile={true}
+              />
+            </div>
+          </div>
+
+          {/* Large Screen: Two Column Layout */}
+          <div className="hidden lg:grid lg:grid-cols-2 min-h-96">
+            <div className="p-6 border-r border-gray-300">
+              <CategoryList
+                categories={categoryData}
+                selectedCategory={selectedCategory}
+                onCategorySelect={handleCategorySelect}
+                onSubcategorySelect={handleSubcategorySelect}
+                isMobile={false}
               />
             </div>
 
-            <div className="p-6 bg-gray-100">
-              <SubCategoryList
-                subcategories={categoryData[selectedCategory]?.subcategories}
-                selectedCategory={selectedCategory}
-                selectedSubcategory={selectedSubcategory}
-                onSubcategorySelect={handleSubcategorySelect}
-              />
-            </div>
+            {selectedCategory && (
+              <div className="p-6 bg-gray-100">
+                <SubCategoryList
+                  subcategories={categoryData[selectedCategory]?.subcategories}
+                  selectedCategory={selectedCategory}
+                  selectedSubcategory={selectedSubcategory}
+                  onSubcategorySelect={handleSubcategorySelect}
+                />
+              </div>
+            )}
+            
+            {!selectedCategory && (
+              <div className="p-6 bg-gray-100 flex items-center justify-center">
+                <div className="text-center text-gray-500">
+                  <div className="text-4xl mb-4">📂</div>
+                  <p className="text-lg font-medium mb-2">Select a Category</p>
+                  <p className="text-sm">Choose a category from the left to see subcategories</p>
+                </div>
+              </div>
+            )}
           </div>
         </div>
 
